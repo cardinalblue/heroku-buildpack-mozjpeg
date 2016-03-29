@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "mozjpeg 3.1"
+exit 0
