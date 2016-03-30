@@ -1,5 +1,12 @@
 #!/bin/sh
 
-working_path=`pwd`
+build_dir=$1
+working_dir=`pwd`
 
-dpkg -i $working_path/vendor/mozjpeg_3.1_amd64.deb
+chmod -R +x $working_dir/vendor/bin/
+mkdir -p $build_dir/mozjpeg
+cp -R $working_dir/vendor/* $build_dir/mozjpeg/
+
+mkdir -p $build_dir/.profile.d
+echo 'PATH=$PATH:$HOME/mozjpeg/bin' > $build_dir/.profile.d/mozjpeg.sh
+echo 'LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/mozjpeg/lib64' >> $build_dir/.profile.d/mozjpeg.sh
