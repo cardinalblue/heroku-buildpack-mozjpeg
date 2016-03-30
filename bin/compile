@@ -9,4 +9,4 @@ cp -R $working_dir/vendor/* $build_dir/mozjpeg/
 
 mkdir -p $build_dir/.profile.d
 echo 'PATH=$PATH:$HOME/mozjpeg/bin' > $build_dir/.profile.d/mozjpeg.sh
-echo 'LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/mozjpeg/lib64' >> $build_dir/.profile.d/mozjpeg.sh
+echo 'LD_LIBRARY_PATH=$HOME/mozjpeg/lib64:$LD_LIBRARY_PATH' >> $build_dir/.profile.d/mozjpeg.sh
